@@ -1,0 +1,23 @@
+certifi
+chardet
+urllib3
+Click
+cryptg
+aiohttp
+hachoir
+idna
+itsdangerous
+Jinja2
+requests
+telethon
+#git+https://github.com/LonamiWebs/Telethon@v1.25#telethon
+#-e git+https://github.com/LonamiWebs/Telethon/archive/v1.zip#egg=telethon
+simplebot
+mock
+psutil
+#git+https://gitlab.com/mattbas/python-lottie@master#lottie
+lottie
+pillow
+cairosvg
+markdown
+flask
