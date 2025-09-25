@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: simplebot-telegram-bridge
+    env: python
+    plan: free
+    region: oregon
+    branch: main
+    
+    # Configuración de build
+    buildCommand: pip install -r requirements.txt
+    
+    # Comando de inicio
+    startCommand: python -m simplebot -a $ADDR -p $ADMIN -d
+    
+    # Variables de entorno (configuradas en el dashboard de Render)
+    envVars:
+      - key: ADDR
+        sync: false
+      - key: ADMIN
+        sync: false
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: TGTOKEN
+        sync: false
+      - key: WHITE_LIST
+        sync: false
+      - key: BLACK_LIST
+        sync: false
+    
+    # Configuración de auto-deploy
+    autoDeploy: true
+    
+    # Habilitar vistas previas para PRs
+    pullRequestPreviewsEnabled: true
+    pullRequestPreviewsDeployPreviewsEnabled: true
+    pullRequestPreviewsUrlPrefix: "tg-bridge-pr-"
+    
+    # Health check path
+    healthCheckPath: /
